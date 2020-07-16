@@ -12,10 +12,13 @@ app.use(bodyParser.json());
 
 app.post('/login', (req, res) => {
 
-    console.log(req.body)
+    const { email, pwd } = req.body;
 
-    const response = { status: 'sucesso', resultado: 10 };
-    res.json(response);
+    if (email === 'fariaa@hotmail.com' && pwd === 'admin') {
+        const response = { msg: "user authorized", token: "jljaljljlajljlamlasifgkgl32323565" };
+        res.json(response);
+    }
+    res.status(401).json({ msg: "user not authorized" })
 })
 
 app.get('/', (req, res) => {
