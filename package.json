@@ -21,10 +21,10 @@
     "module-alias": "^2.2.2",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.24",
-    "winston": "^3.3.3"
+    "winston": "^3.3.3",
+    "eslint": "^7.4.0"
   },
   "devDependencies": {
-    "eslint": "^7.4.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "nodemon": "^2.0.4"
   },
