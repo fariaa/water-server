@@ -16,9 +16,17 @@ const authController = {
                 if (user.validPassword(req.body.password)) {
                     jwt.sign({ user }, config.jwt.secret, (error, token) => {
                         if (error) {
+                            return res.status(500).send({
+                                message: "Internal error."
+                            });
                         }
-                        return res.status(201).send({
-                            token,
+
+                        const { name, email } = user._doc;
+
+                        const data = { name, email, token };
+
+                        return res.status(200).send({
+                            user: data,
                             message: "User Logged In",
                         })
                     })
